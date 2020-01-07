@@ -1,30 +1,26 @@
 $( function() {
     var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
+
+"DENBARKER",
+"DENDY",
+"DENHAM",
+
+
     ];
-    $( "#tags" ).autocomplete({
+    $( "#form, #to" ).autocomplete({
       source: availableTags
     });
   } );
- 
+  $(document).ready(function() {
+
+
+      $(".addItem").click(function(){
+          var html = $(".copy").html();
+          $(".after-add-more").after(html);
+      });
+
+
+      $("body").on("click",".removeCopy",function(){
+          $(this).parents(".control-group").remove();
+      });
+      });
