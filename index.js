@@ -1,26 +1,22 @@
-$( function() {
+$(function () {
     var availableTags = [
-
-"DENBARKER",
-"DENDY",
-"DENHAM",
-
-
+        "DENBARKER",
+        "DENDY",
+        "DENHAM",
     ];
-    $( "#form, #to" ).autocomplete({
-      source: availableTags
+    $("#form, #to").autocomplete({
+        source: availableTags
     });
-  } );
-  $(document).ready(function() {
-
-
-      $(".addItem").click(function(){
-          var html = $(".copy").html();
-          $(".after-add-more").after(html);
-      });
-
-
-      $("body").on("click",".removeCopy",function(){
-          $(this).parents(".control-group").remove();
-      });
-      });
+    add();
+});
+function add() {
+    var html = $(".copy").html();
+    $(".after-add-more").after(html);
+}
+function remove() {
+    $('.checkbox').each(function (i) {
+        if ($(this).prop('checked') === true) {
+            $(this).parents(".control-group").remove();
+        }
+    });
+}

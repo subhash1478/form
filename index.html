@@ -1,102 +1,68 @@
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://designzcloud.com/html/NCLL/css/bootstrap.min.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
-
 <body>
-    <div class="banner_sec">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="banner_sub_sec">
-                        <div class="banner_table_sec">
-                            <h2>Quick Quote and ETA</h2>
-                            <div class="banner_form_sec">
-                                <div class="banner_from ">
-                                    <label>From</label>
-                                    <input class="form-control" id="form">
-                                </div>
-                                <div class="banner_to">
-                                    <label>To</label>
-                                    <input class="form-control" id="to">
-                                </div>
-                                <div class="banner_date">
-                                    <label>Start Date</label>
-                                    <input type="date" class="form-control" placeholder="YYYY-MM-DD">
-                                </div>
-
-                                  <div class="copy">
-
-                                    <div class="removeCopy">
-
-                                <div class="banner_good_type">
-                                    <label>Goods Type</label>
-
-                                <select class="form-control">
-                                    <option value="">-----</option>
-
-                            <option value="CTNS">Carton</option>
-<option value="ENV">Envelope</option>
-<option value="PLT">Pallet</option>
-<option value="SKID">Skid</option>
-<option value="PCL">Parcel</option>
-<option value="PPS">Satchel/Bag</option>
-<option value="CRATE">Crate</option>
-<option value="TUBE">Tube</option>
-<option value="CTNL">Large Carton</option>
-<option value="CTNH">Heavy Carton</option>
-<option value="TYRE">Wheel/Tyre</option>
-<option value="FLATS">Flat Pack Small</option>
-<option value="FLATL">Flat Pack Large</option>
-<option value="LEN1">Length/Roll under 1m</option>
-<option value="LEN2">Length/Roll 1-2m</option>
-<option value="LEN3">Length/Roll 2-3m</option>
-<option value="BULKS">Bulky Item</option>
-<option value="BULKL">Bulky Item VeryLarge</option>
-<option value="AUTOM">Automotive/Car Part</option></select>
-                                </div>
-                                <div class="banner_wt">
-                                    <label>Wt (kg)</label>
-                                    <input type="number" class="form-control" placeholder="0">
-                                </div>
-                                <div class="banner_pcs">
-                                    <label>Pcs</label>
-                                    <input type="number" class="form-control" placeholder="0">
-                                </div>
-                                <div class="banner_w_cm">
-                                    <label>W (cm)</label>
-                                    <input type="number" class="form-control" placeholder="0">
-                                </div>
-                                <div class="banner_h_cm">
-                                    <label>H (cm)</label>
-                                    <input type="number" class="form-control" placeholder="0">
-                                </div>
-                                <div class="banner_d_cm">
-                                    <label>D (cm)</label>
-                                    <input type="number" class="form-control" placeholder="0">
-                                </div>
-                                    </div>
-                                    </div>
-                                    <div class="after-add-more"></div>
-
-                                <button on class="btn btn-warning addItem"  type="submit">Add</button>
-                                <button on class="btn btn-warning removeItem"  type="submit">Remove</button>
-                                <button on class="btn btn-warning "  type="submit">Search</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="banner_table_sec">
+    <h2>Quick Quote and ETA</h2>
+    <div class="banner_form_sec">
+      <div class="banner_from ">
+        <label>From</label>
+        <input class="form-control" id="form">
+      </div>
+      <div class="banner_to">
+        <label>To</label>
+        <input class="form-control" id="to">
+      </div>
+      <div class="banner_date">
+        <label>Start Date</label>
+        <input type="date" class="form-control" placeholder="YYYY-MM-DD">
+      </div>
+      <div class="copy" style="display: none;">
+        <fieldset class="control-group">
+          <input type="checkbox" name="chck[]" class="checkbox">
+          <div class="banner_good_type">
+            <label>Goods Type</label>
+            <select class="form-control" name="type[]">
+              <option value="">-----</option>
+              <option value="CTNS">Carton</option>
+              <option value="ENV">Envelope</option>
+              <option value="PLT">Pallet</option>
+            </select>
+          </div>
+          <div class="banner_wt">
+            <label>Wt (kg)</label>
+            <input type="number" class="form-control" placeholder="0">
+          </div>
+          <div class="banner_pcs">
+            <label>Pcs</label>
+            <input type="number" class="form-control" placeholder="0">
+          </div>
+          <div class="banner_w_cm">
+            <label>W (cm)</label>
+            <input type="number" class="form-control" placeholder="0">
+          </div>
+          <div class="banner_h_cm">
+            <label>H (cm)</label>
+            <input type="number" class="form-control" placeholder="0">
+          </div>
+          <div class="banner_d_cm">
+            <label>D (cm)</label>
+            <input type="number" class="form-control" placeholder="0">
+          </div>
+        </fieldset>
+      </div>
+      <div class="after-add-more"></div>
+      <button class="btn btn-warning addItem" type="button" onclick="add()">Add</button>
+      <input type="button" value="Remove" onclick="remove()">
+      <button on class="btn btn-warning " type="submit">Search</button>
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="index.js"></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="index.js"></script>
 </body>
-
 </html>
